@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮图</title>
+    <link rel="stylesheet" href="css/shadows.css">
+</head>
+<body>
+
+ <!--shadow-->
+<div class="shadow">
+    <div class="shadowBox">
+        <div id="middleClose" class="close">×</div>
+        <a class="activityLink" href="http://www.baidu.com" target="_blank">
+            <img src="./img/0328-luckDraw.png" alt="">
+        </a>
+    </div>
+</div>
+
+
+ <!--main-->
+<div style="text-align: center">
+    <h1>我要做遮罩层</h1>
+    <div class="floating-right">
+        <div id="rightClose" class="close-right">×</div>
+        <a href="http://www.baidu.com" class="right" target="_blank"><img src="img/0328-rightluckDraw.png" alt=""></a>
+    </div>
+
+</div>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+    $('#btn').click(function () {
+        $('.close').css({'display':'block'});
+        $('.shadow').css({'display':'block'});
+    });
+    //点击中间浮图以后保存用户操作
+    $('.activityLink').click(function (e) {
+        sessionStorage.setItem('image',true);
+    });
+
+
+    //中间浮图的关闭点击事件
+    $('#middleClose').click(function (e) {
+        e.preventDefault();
+        $('.shadow').fadeOut();
+        sessionStorage.setItem('close',true);
+    });
+
+    //右侧浮图关闭点击事件
+    $('#rightClose').click(function () {
+       $('.floating-right').fadeOut();
+    });
+
+    var flagImage=sessionStorage.getItem('image');
+    var flagClose=sessionStorage.getItem('close');
+    console.log('图片'+flagImage);
+    console.log('取消'+flagClose);
+    //先判断是否点击过图片和取消按键,如果都没有就显示,如果点击过图片,就不显示.如果点击过取消就随机显示
+
+            if(flagImage!='true'&&flagClose!='true'){
+//                $('.shadow').css({'display':'block'});
+                $('.shadow').fadeIn();
+            }else if(flagImage){
+                $('.shadow').css({'display':'none'});
+            }else if(flagClose){
+                var n1=Math.floor(Math.random()*100+1);
+                console.log(n1);
+                if(n1>50){
+                    $('.shadow').fadeIn();
+                }
+            }
+
+
+</script>
+</body>
+</html>

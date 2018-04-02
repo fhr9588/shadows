@@ -1,0 +1,79 @@
+.shadow{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 100;
+    background: rgba(0,0,0,0.5);
+    display: none;
+}
+.shadow .shadowBox{
+    display: block;
+    width: 50%;
+    position: fixed;
+    top:5%;
+    left: 24%;
+}
+.shadowBox .activityLink{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.shadowBox .activityLink img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.image{
+    width: 500px;
+    height: 500px;
+    display: none;
+    position: fixed;
+    background: url(2.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 300;
+    top: 9%;
+    left: 22%;
+}
+.close{
+    display: block;
+    color:#cdcdcd;
+    border-radius: 50%;
+    z-index: 600;
+    position: absolute;
+    right: 34px;
+    top: 0px;
+    float: right;
+    font-size: 29px;
+    cursor: pointer;
+}
+.floating-right{
+    text-align: center;
+    width: 200px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+.floating-right .close-right{
+    display: block;
+    color: #999999;
+    border-radius: 50%;
+    z-index: 600;
+    position: absolute;
+    right: 3px;
+    bottom: 124px;
+    float: right;
+    font-size: 26px;
+    cursor: pointer;
+}
+.floating-right .right{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.floating-right .right img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
